@@ -3,7 +3,7 @@ from airflow.operators.dummy import DummyOperator
 from airflow.providers.databricks.operators.databricks import (
     DatabricksRunNowOperator,
 )
-from datetime import datetime, timedelta
+from datetime import dategittime, timedelta
 
 """
 SUCCESS SCENARIO.
@@ -13,12 +13,12 @@ SUCCESS SCENARIO.
 
 
 # Define params for Run Now Operator
-notebook_params = {"Variable": 5}
+notebook_params = {"filter": 40}
 
 
 with DAG(
     "databricks_dag",
-    start_date=datetime(2021, 1, 1),
+    start_date=datetime(2022, 8, 22),
     schedule_interval="@daily",
     catchup=False,
     default_args={
@@ -35,7 +35,7 @@ with DAG(
     opr_run_now = DatabricksRunNowOperator(
         task_id="run_now",
         databricks_conn_id="databricks",
-        job_id=14,
+        job_id=318554602789353,
         notebook_params=notebook_params,
     )
 
