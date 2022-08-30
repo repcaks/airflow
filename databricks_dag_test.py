@@ -13,7 +13,7 @@ notebook_task = {
     'notebook_path': '/Users/muchakacper8@gmail.com/showdf',
 }
 
-Define params for Run Now Operator
+# Define params for Run Now Operator
 notebook_params = {
     
 }
