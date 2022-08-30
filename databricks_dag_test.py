@@ -13,10 +13,10 @@ notebook_task = {
     'notebook_path': '/Users/muchakacper8@gmail.com/showdf',
 }
 
-#Define params for Run Now Operator
-# notebook_params = {
-#     "Variable":5
-# }
+Define params for Run Now Operator
+notebook_params = {
+    
+}
 
 default_args = {
     'owner': 'airflow',
