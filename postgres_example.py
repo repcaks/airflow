@@ -33,6 +33,7 @@ dag_psql = DAG(
 create_table_sql_query = """ 
 CREATE TABLE employee_test (id INT NOT NULL, name VARCHAR(250) NOT NULL, dept VARCHAR(250) NOT NULL);
 """
+
 insert_data_sql_query = """
 insert into employee_test (id, name, dept) values(1, 'vamshi','bigdata'),(2, 'divya','bigdata'),(3, 'binny','projectmanager'),
 (4, 'omair','projectmanager') ;"""
@@ -43,12 +44,12 @@ create_table = PostgresOperator(
    postgres_conn_id = "postgres_local",
    dag = dag_psql
    )
-   insert_data = PostgresOperator(
-   sql = insert_data_sql_query,
-   task_id = "insert_data_task",
-   postgres_conn_id = "postgres_local",
-   dag = dag_psql
-   )
+insert_data = PostgresOperator(
+    sql = insert_data_sql_query,
+    task_id = "insert_data_task",
+    postgres_conn_id = "postgres_local",
+    dag = dag_psql
+)
 
 create_table >> insert_data
 
