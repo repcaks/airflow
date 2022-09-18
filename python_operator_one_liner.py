@@ -12,8 +12,8 @@ def read_data_postgres_write_to_mysql():
         schema='airflow_test'
     )
 
-    df = pg_hook.get_pandas_df(sql=postgre_sql_stmt)
-    print(df)
+    # df = pg_hook.get_pandas_df(sql=postgre_sql_stmt)
+    # print(df)
 
 
 with DAG("postgres_mysql_etl", start_date=datetime(2021,1,1),schedule_interval='@daily',catchup=False) as dag:
