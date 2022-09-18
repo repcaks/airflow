@@ -8,7 +8,7 @@ from datetime import datetime
 def read_data_postgres_write_to_mysql():
     postgre_sql_stmt= "SELECT * FROM  employee_test"
     pg_hook = PostgresHook(
-        postgres_conn_id='postgres_db',
+        postgres_conn_id='postgres_local',
         schema='airflow_test'
     )
 
