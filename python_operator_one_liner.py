@@ -1,5 +1,6 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from airflow.hooks.postgres_hook import PostgresHook
 
 from sqlalchemy import create_engine
 from datetime import datetime
